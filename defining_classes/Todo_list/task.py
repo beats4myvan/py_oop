@@ -13,7 +13,7 @@ class Task:
             return self.name
 
     def change_due_date(self, new_date: str):
-        if self.due_date  == new_date:
+        if self.due_date == new_date:
             return "Date cannot be the same."
         else:
             self.due_date = new_date
@@ -26,15 +26,9 @@ class Task:
         if comment_number in range(len(self.comments)):
             self.comments[comment_number] = new_comment
             return ', '.join(self.comments)
-        return 'Cannot find comment'
+        return 'Cannot find comment.'
 
     def details(self):
         return f'Name: {self.name} - Due Date: {self.due_date}'
 
 
-task = Task("Make bed", "27/05/2020")
-print(task.change_name("Go to University"))
-print(task.change_due_date("28.05.2020"))
-task.add_comment("Don't forget laptop")
-print(task.edit_comment(0, "Don't forget laptop and notebook"))
-print(task.details())

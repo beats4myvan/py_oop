@@ -11,14 +11,13 @@ class Player:
             self.skills[skill_name] = mana_cost
             return f'Skill {skill_name} added to the collection of the player {self.name}'
         else:
-            return f'Skill already added"'
-
+            return f'Skill already added'
 
     def player_info(self):
         result = f'Name: {self.name}\nGuild: {self.guild}\n' \
-                 f'HP: {self.hp}\nMP: {self.mp}\n' \
-                 f''
+                 f'HP: {self.hp}\nMP: {self.mp}\n'
         for skill, mana in self.skills.items():
             result += f'==={skill} - {mana}\n'
-            return result
+        return result
+
 

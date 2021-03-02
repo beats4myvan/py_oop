@@ -1,28 +1,28 @@
-
 class Guild:
     def __init__(self, name):
         self.name = name
-        self.list_of_players = []
+        self.players = []
 
-    def assign_player(self, player: Player):
-        if not player.name in self.list_of_players and player.guild == 'Unaffiliated':
-            self.list_of_players.append(player.name)
-            player.guild = self.name
-            return f"Welcome player {player.name} to the guild {player.guild}"
+    def assign_player(self, player):
+        if not player.guild == "Unaffiliated" and not player.guild == self.name:
+            return f"Player {player.name} is in another guild."
         elif player.guild == self.name:
-            return f'Player {player.name} is already in the guild.'
-        elif player.guild != self.name:
-            return f'Player {player.name} is in another guild.'
+            return f"Player {player.name} is already in the guild."
+        else:
+            self.players.append(player)
+            player.guild = self.name
+            return f"Welcome player {player.name} to the guild {self.name}"
 
     def kick_player(self, player_name: str):
-        if player_name in self.list_of_players:
-            self.list_of_players.remove(player_name)
-            player.guild = 'Unaffiliated'
-            return f'Player {player_name} has been removed from the guild.'
+        result = [p.name for p in self.players]
+        if player_name not in result:
+            return f"Player {player_name} is not in the guild."
         else:
-            return f'Player {player_name} is not in the guild.'
+            del self.players[player_name.index(player_name)]
+            return f"Player {player_name} has been removed from the guild."
 
     def guild_info(self):
-        return f'Guild: {player.guild}\n{player.player_info()}'
-
-
+        guild_stats = f"Guild: {self.name}\n"
+        for p in self.players:
+            guild_stats += p.player_info()
+        return guild_stats

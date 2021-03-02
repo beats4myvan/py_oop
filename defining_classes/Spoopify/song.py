@@ -1,6 +1,3 @@
-from album import Album
-from band import Band
-
 class Song:
     def __init__(self, name, length, single):
         self.name = name
