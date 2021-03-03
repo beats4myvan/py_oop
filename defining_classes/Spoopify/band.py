@@ -1,3 +1,6 @@
+from defining_classes.Spoopify.album import Album
+
+
 class Band:
     def __init__(self, name):
         self.name = name
@@ -24,4 +27,5 @@ class Band:
         band_details = f'Band {self.name}\n'
         for i in self.albums:
             band_details += f'{i.details()}\n'
-            return band_details
+            return  band_details
+
