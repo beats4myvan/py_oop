@@ -18,7 +18,6 @@ class Point:
         nums = math.sqrt((first_num ** 2) + (second_num ** 2))
         return nums
 
-
 p = Point(2, 4)
 p.set_x(3)
 p.set_y(5)
