@@ -3,7 +3,7 @@ class PhotoAlbum:
 
     def __init__(self, pages, ):
         self.pages = pages
-        self.photos = [[] for page in range(self.pages)]
+        self.photos = [[] for _ in range(self.pages)]
 
     @classmethod
     def from_photos_count(cls, photos_count):
