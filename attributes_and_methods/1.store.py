@@ -39,8 +39,8 @@ class Store:
         self.items_count += 1
 
         if item not in self.items:
-            self.items[item] = 0
-        self.items[item] += 1
+            self.items[item] = 1
+        # self.items[item] += 1
         return f'{item} added to the store'
 
     def remove_item(self, item, amount):

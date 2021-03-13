@@ -1,4 +1,4 @@
-from animal import Animal
+from zoo.animal import Animal
 from dog import Dog
 class Cat(Animal):
     def meow(self):
