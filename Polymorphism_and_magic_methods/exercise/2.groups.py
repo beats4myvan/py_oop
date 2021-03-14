@@ -4,8 +4,7 @@ class Person:
         self.surname = surname
 
     def __add__(self, other):
-        return self.name + ' ' + other.surname
-
+        return Person(self.name, other.surname)
 
 class Group:
     def __init__(self, name, people):
@@ -13,10 +12,18 @@ class Group:
         self.people = people
 
     def __add__(self, other):
-        return [x for x in self.people]
+        return self.people + other.people
+
+
+    def __len__(self):
+        return len(self.people)
 
     def __repr__(self):
-        return f'Group {self.name} with members {[x for x in self.people]}'
+        full_name = []
+        for name in self.people:
+
+            full_name.append(name.name + " " + name.surname)
+        return f'Group {self.name} with members {", ".join([name for name in full_name])}'
 
 
 p0 = Person('Aliko', 'Dangote')
