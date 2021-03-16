@@ -1,5 +1,5 @@
 from zoo.animal import Animal
-from dog import Dog
+from animals.dog import Dog
 class Cat(Animal):
     def meow(self):
         return 'meowking..'

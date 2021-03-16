@@ -1,4 +1,4 @@
-from project.food.starter import Starter
+from animals import Starter
 
 
 class Soup(Starter):

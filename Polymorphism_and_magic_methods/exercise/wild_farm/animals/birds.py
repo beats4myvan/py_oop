@@ -1,6 +1,6 @@
-
-from animal import Bird
-from food import *
+from wild_farm.animals import Bird
+from wild_farm.animals.mammals import Mouse
+from wild_farm.food import *
 
 
 class Owl(Bird):
@@ -26,22 +26,26 @@ class Hen(Bird):
     def feed(self, food):
         return self.get_weight_food_eaten(self.WEIGHT_INCREASE, food)
 
+# owl = Owl("Pip", 10, 10)
+# print(owl)
+# meat = Meat(4)
+# print(owl.make_sound())
+# owl.feed(meat)
+# veg = Vegetable(1)
+# print(owl.feed(veg))
+# print(owl)
 
-owl = Owl("Pip", 10, 10)
-print(owl)
-meat = Meat(4)
-print(owl.make_sound())
-owl.feed(meat)
-veg = Vegetable(1)
-print(owl.feed(veg))
-print(owl)
-hen = Hen("Harry", 10, 10)
+#
+# hen = Hen("Harry", 10, 10)
+mouse = Mouse("vanka", 0.5, "maze")
 veg = Vegetable(3)
 fruit = Fruit(5)
 meat = Meat(1)
-print(hen)
-print(hen.make_sound())
-hen.feed(veg)
-hen.feed(fruit)
-hen.feed(meat)
-print(hen)
+print(mouse)
+print(mouse.make_sound())
+mouse.feed(veg)
+mouse.feed(fruit)
+
+print(mouse.feed(meat))
+print(mouse)
+#

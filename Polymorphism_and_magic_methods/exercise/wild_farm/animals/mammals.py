@@ -1,5 +1,5 @@
-from animal import Mammal
-from food import *
+from wild_farm.animals import Mammal
+from wild_farm.food import *
 
 
 class Mouse(Mammal):
