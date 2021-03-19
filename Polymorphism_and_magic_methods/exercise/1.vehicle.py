@@ -1,10 +1,18 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Vehicle(ABC):
     def __init__(self, drive, refuel):
         self.drive = drive
         self.refuel = refuel
+
+    @abstractmethod
+    def drive(self, distance):
+        pass
+
+    @abstractmethod
+    def refuel(self, fuel):
+        pass
 
 
 class Car(Vehicle):
@@ -15,14 +23,12 @@ class Car(Vehicle):
 
     def drive(self, distance):
         air_condition = 0.9
-        self.distance = distance
-        fuel_needed = (self.fuel_consumption + air_condition) * self.distance
+        fuel_needed = (self.fuel_consumption + air_condition) * distance
         if self.fuel_quantity > fuel_needed:
             self.fuel_quantity -= fuel_needed
 
     def refuel(self, fuel):
-        self.fuel = fuel
-        self.fuel_quantity += self.fuel
+        self.fuel_quantity += fuel
         return self.fuel_quantity
 
 
@@ -34,15 +40,13 @@ class Truck(Vehicle):
 
     def drive(self, distance):
         air_condition = 1.6
-        self.distance = distance
-        fuel_needed = (self.fuel_consumption + air_condition) * self.distance
+        fuel_needed = (self.fuel_consumption + air_condition) * distance
         if self.fuel_quantity > fuel_needed:
             self.fuel_quantity -= fuel_needed
 
     def refuel(self, fuel):
         hole_in_fuel_tank = 0.95
-        self.fuel = fuel
-        self.fuel_quantity += self.fuel * hole_in_fuel_tank
+        self.fuel_quantity += fuel * hole_in_fuel_tank
         return self.fuel_quantity
 
 

@@ -1,7 +1,3 @@
-from wild_farm.animals import Mammal
-from wild_farm.food import *
-
-
 class Mouse(Mammal):
     WEIGHT_INCREASE = 0.10
 
