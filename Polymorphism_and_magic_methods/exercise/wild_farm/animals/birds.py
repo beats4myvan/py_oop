@@ -1,7 +1,7 @@
 from wild_farm.animals import Bird
 from wild_farm.animals.mammals import Mouse
+from wild_farm.food import *
 
-from Polymorphism_and_magic_methods.exercise.wild_farm.food import Meat
 
 class Owl(Bird):
     WEIGHT_INCREASE = 0.25
