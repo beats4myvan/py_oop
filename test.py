@@ -1,40 +1,38 @@
-# from abc import ABC, abstractmethod
-#
-#
-# class AbstractClassExample(ABC):
-#
-#     @abstractmethod
-#     def do_something(self):
-#         print("Some implementation!")
-#
-#
-# class AnotherSubclass(AbstractClassExample):
-#
-#     def do_something(self):
-#         super().do_something()
-#         print("The enrichment from AnotherSubclass")
-#
-#
-# x = AnotherSubclass()
-# x.do_something()
+def decorator(f):
+    def new_function():
+        print("Extra Functionality")
+        f()
+    return new_function
 
-class Dates:
-    def __init__(self, date):
-        self.date = date
+@decorator
+def initial_function():
+    print("Initial Functionality")
 
-    def getDate(self):
-        return self.date
-
-    @staticmethod
-    def toDashDate(date):
-        return date.replace("/", "-")
+initial_function()
 
 
-date = Dates("15-12-2016")
-dateFromDB = "15/12/2016"
-dateWithDash = Dates.toDashDate(dateFromDB)
-
-if (date.getDate() == dateWithDash):
-    print("Equal")
-else:
-    print("Unequal")
+# class AnotherWay:
+#
+#     def __init__(self, var):
+#         ## calling the set_a() method to set the value 'a' by checking certain conditions
+#         self.set_a(var)
+#
+#     ## getter method to get the properties using an object
+#     def get_a(self):
+#         return self.__a
+#
+#     ## setter method to change the value 'a' using an object
+#     def set_a(self, var):
+#         if var > 0 and var % 2 == 0:
+#             self.__a = var
+#
+#         else:
+#             self.__a = 2
+#
+#     a = property(get_a, set_a)
+#
+#
+# ## creating an object for the 'AnotherWay' class
+# obj = AnotherWay(28)
+#
+# print(obj.get_a())
