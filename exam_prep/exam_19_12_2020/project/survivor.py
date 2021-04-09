@@ -12,8 +12,8 @@ class Survivor:
 
     @name.setter
     def name(self, value):
-        if value < "":
-            raise ValueError('Name not valid!')
+        if len(value) <= 0:
+            raise ValueError("Name not valid!")
         self._name = value
 
     @property
@@ -36,6 +36,7 @@ class Survivor:
             raise ValueError('Health not valid!')
         elif value > 100:
             self.health = 100
+            return
         self._health = value
 
     @property
@@ -48,6 +49,7 @@ class Survivor:
             raise ValueError('Needs not valid!')
         elif value > 100:
             self.needs = 100
+            return
         self._needs = value
 
     @property
